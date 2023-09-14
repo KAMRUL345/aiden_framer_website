@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+summary:first-of-type {
+    list-style-type: none;
+}
+
+summary:after {
+    border-radius: 5px;
+    content: "+";
+    color: #000;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -7px 12px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  details[open] summary:after {
+    content: "x";
+     font-size: 20px;
+  }
+
+  .sliding {
+    position: relative;
+    animation-name: example;
+    animation-duration: 8s;
+    animation-timing-function: cubic-bezier(0,0,1,1);
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+
+  }
+
+  @keyframes example {
+    from {right: 100px;}
+    to {right: 1100px;}
+  }
+
+  /* @keyframes example {
+    0%   {right:100px; left:1100px;}
+  
+    100% {right:1000px; left:0px;}
+  } */
+   
+
+@layer components {
+
+    .btn {
+        @apply bg-[#ff4f00] rounded-full px-10 py-3 text-white text-center hover:bg-slate-950 transition-all duration-500;
+    }
+    .btn1 {
+        @apply bg-[#ff4f00] rounded text-white text-center font-semibold text-2xl hover:bg-slate-950 transition-all duration-500 h-40 pt-16 px-10 ps-11 rounded-3xl;
+    }
+
+    .text-paragraph {
+        @apply font-semibold text-gray-500 text-xl pb-4;
+    }
+
+    .watch-tag {
+        @apply flex justify-start gap-3 pt-2 ps-2;
+    }
+
+    .accordion {
+        @apply m-10 w-[600px];
+    }
+}
